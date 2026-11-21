@@ -1,0 +1,112 @@
+:root {
+  --text-gradient: linear-gradient(
+    120deg,
+    #7d4c00,
+    #9e6100,
+    #ffe77d,
+    #bd820b,
+    #e0b145
+  );
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #023900;
+  color: #e0b145;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-arabic {
+  font-family: "Noto Kufi Arabic", "Amiri", sans-serif;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+label,
+small,
+strong,
+em,
+i,
+.gradient-text {
+  background-image: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
+button {
+  font: inherit;
+}
+
+:where(button, [role="button"], a):focus-visible {
+  outline: 3px solid #ffe77d;
+  outline-offset: 3px;
+}
+
+.play-button-text {
+  filter: drop-shadow(0 1px 0 rgba(2, 57, 0, 0.45));
+}
+
+::selection {
+  background: rgba(255, 231, 125, 0.35);
+  color: #022c22;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
